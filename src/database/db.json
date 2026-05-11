@@ -17,5 +17,11 @@
     "name": "camera 4",
     "description": "canon 5d mark iv 4",
     "price": 155004
+  },
+  {
+    "id": 1778523343221,
+    "name": "camera 5",
+    "description": "canon 5d mark iv 5",
+    "price": 155005
   }
 ]

@@ -33,22 +33,46 @@ export const productController = async (
         data: product,
       }),
     );
-  } else if(method === "POST" && url === "/products"){
-    const body = await parseBody(req)
+  } else if (method === "POST" && url === "/products") {
+    const body = await parseBody(req);
     // console.log("Body", body);
     const products = readProduct();
     const newProduct = {
       id: Date.now(),
-      ...body
-    }
-    products.push(newProduct)
+      ...body,
+    };
+    products.push(newProduct);
     // console.log(products)
-    insertProduct(products)
+    insertProduct(products);
     res.writeHead(200, { "content-type": "application/json" });
     res.end(
       JSON.stringify({
         message: "products data created successfully",
         data: newProduct,
+      }),
+    );
+  } else if (method === "PUT" && id !== null) {
+    const body = await parseBody(req);
+    const products = readProduct();
+    const index = products.findIndex((p: IProduct) => p.id === id);
+    // console.log(index);
+    if (index < 0) {
+      res.writeHead(404, { "content-type": "application/json" });
+      res.end(
+        JSON.stringify({
+          message: "products not found",
+          data: null,
+        }),
+      );
+    }
+    // console.log(products[index]);
+    products[index] = { id: products[index].id, ...body };
+    insertProduct(products);
+    res.writeHead(404, { "content-type": "application/json" });
+    res.end(
+      JSON.stringify({
+        message: "product updated successfully",
+        data: products[index],
       }),
     );
   }
