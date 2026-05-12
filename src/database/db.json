@@ -1,15 +1,1 @@
-[
-  { "id": 1, "name": "phone", "description": "Redmi Note 12", "price": 14000 },
-  {
-    "id": 3,
-    "name": "headphone",
-    "description": "Sony WH-CH520",
-    "price": 4500
-  },
-  {
-    "id": 1778523099884,
-    "name": "camera 4",
-    "description": "canon 5d mark iv 4",
-    "price": 155004
-  }
-]
+[{"id":1,"name":"phone","description":"Redmi Note 12","price":14000},{"id":3,"name":"headphone","description":"Sony WH-CH520","price":4500},{"id":1778595559685,"name":"camera 8","description":"canon 5d mark iv 8","price":155008}]
